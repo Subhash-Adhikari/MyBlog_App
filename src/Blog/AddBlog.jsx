@@ -1,14 +1,14 @@
-import React from 'react'
-import Navbar from '../global_components/navbar/Navbar'
-import Card from './components/Card/Card'
+import React from 'react';
+import Navbar from '../global_components/navbar/Navbar';
+import Form from './components/form/Form';
 
 const AddBlog = () => {
   return (
     <div>
-        <Navbar />
-        <Card />
+      <Navbar />
+      <Form type='Create'/>
     </div>
-  )
-}
+  );
+};
 
-export default AddBlog
+export default AddBlog;

@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Card = () => {
   return (
+   <Link to="/blog/id">
     <div className="max-w-sm rounded overflow-hidden shadow-lg mb-4">
       <img 
         className="w-full" 
@@ -26,6 +28,7 @@ const Card = () => {
         </span>
       </div>
     </div>
+   </Link>
   );
 };
 

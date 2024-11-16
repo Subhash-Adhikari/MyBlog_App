@@ -6,6 +6,8 @@ import Login from "./Auth/Login";
 import AddBlog from "./Blog/AddBlog";
 import Layout from "./global_components/layout/layout";
 import Navbar from "./global_components/navbar/Navbar";
+import EditBlog from "./Blog/components/EditBlog";
+import SingleBlog from "./Blog/SingleBlog";
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/addblog" element={<AddBlog />} />
+        <Route path="/blog/add" element={<AddBlog />} />
+        <Route path="/blog/edit" element={<EditBlog />} />
+        <Route path="/blog/id" element={<SingleBlog />} />
       </Routes>
     </BrowserRouter>
   );
