@@ -1,8 +1,11 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Blog/Home';
-import Register from './pages/Auth/Register';
-import Login from './pages/Auth/Login';
-import AddBlog from './pages/Blog/AddBlog';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Blog/Home";
+import Register from "./Auth/Register";
+import Login from "./Auth/Login";
+import AddBlog from "./Blog/AddBlog";
+import Layout from "./global_components/layout/layout";
+import Navbar from "./global_components/navbar/Navbar";
 
 function App() {
   return (
