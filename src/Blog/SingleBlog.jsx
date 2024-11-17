@@ -11,7 +11,7 @@ const SingleBlog = () => {
             {/* Product Image Section */}
             <div className="md:flex-1 px-4">
               <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
-                <img className="w-full h-full object-cover rounded-lg" src="https://cdn.pixabay.com/photo/2020/05/22/17/53/mockup-5206355_960_720.jpg" alt="Product Image" />
+                <img className="w-full h-full object-cover rounded-lg" src="https://media.licdn.com/dms/image/v2/C5603AQEsO5t9DoyLQQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1655687115282?e=2147483647&v=beta&t=nZhH1StBsG0eJZfASlIdtXo6VwKe6kKztAMIy8z7bho" alt="Product Image" />
               </div>
               <div className="flex -mx-2 mb-4">
                 <div className="w-1/2 px-2">
