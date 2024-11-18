@@ -6,7 +6,7 @@ const EditBlog = () => {
   return (
     <div>
    <Layout>
-    <Form type='Edit'/>
+    <Form type='Edit' onSubmit='handleEditBlog' />
    </Layout> 
    </div>
   )
