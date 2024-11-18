@@ -117,7 +117,9 @@ const LRform = ({ type, onSubmit }) => {
                   Go to login
                 </Link>
               ) : (
-                <Link to="/register" style={{ color: "blue" }}>Go to register</Link>
+                <Link to="/register" style={{ color: "blue" }}>
+                  Go to register
+                </Link>
               )}
             </form>
           </div>

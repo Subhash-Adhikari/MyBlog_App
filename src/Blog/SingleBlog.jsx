@@ -1,8 +1,25 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import Layout from '../global_components/layout/layout';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { baseUrl } from '../config';
+import { useState,useEffect } from 'react';
 
 const SingleBlog = () => {
+
+  const {id} = useParams()
+  const[blog,setBlog] = useState({})
+  const fetchBlog = async ()=>{
+    const response = await axios.get(`${baseUrl}/blog/${id}`);
+    if (response.status === 200){
+      setBlog(response.data.data)
+    }
+  }
+  useEffect(()=>{
+    fetchBlog()
+  },[]);
+
   return (
     <Layout>
       <div className="bg-gray-100 dark:bg-gray-800 py-8 h-screen">
@@ -11,7 +28,7 @@ const SingleBlog = () => {
             {/* Product Image Section */}
             <div className="md:flex-1 px-4">
               <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
-                <img className="w-full h-full object-cover rounded-lg" src="https://media.licdn.com/dms/image/v2/C5603AQEsO5t9DoyLQQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1655687115282?e=2147483647&v=beta&t=nZhH1StBsG0eJZfASlIdtXo6VwKe6kKztAMIy8z7bho" alt="Product Image" />
+                <img className="w-full h-full object-cover rounded-lg" src={blog?.imageUrl} alt="Product Image" />
               </div>
               <div className="flex -mx-2 mb-4">
                 <div className="w-1/2 px-2">
@@ -27,26 +44,23 @@ const SingleBlog = () => {
             </div>
             {/* Product Details Section */}
             <div className="md:flex-1 px-4">
-              <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">Blog Title</h2>
+              <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">{blog?.title}</h2>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ante justo. Integer euismod libero id mauris malesuada tincidunt.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ante justo. Integer euismod libero {id} mauris malesuada tinc{id}unt.
               </p>
               <div className="flex mb-4">
                 <div className="mr-4">
-                  <span className="font-bold text-gray-700 dark:text-gray-300">Category:</span>
-                  <span className="text-gray-600 dark:text-gray-300">$29.99</span>
+                  <span className="font-bold text-gray-700 dark:text-gray-300">{blog?.category}:</span>
+                  <span className="text-gray-600 dark:text-gray-300">Author : {blog?.userId?.username}</span>
                 </div>
-                <div>
-                  <span className="font-bold text-gray-700 dark:text-gray-300">Published At:</span>
-                  <span className="text-gray-600 dark:text-gray-300">In Stock</span>
-                </div>
+                
               </div>
               
-              {/* Product Description */}
+              {/* Blog Description */}
               <div>
                 <span className="font-bold text-gray-700 dark:text-gray-300">Product Description:</span>
                 <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ante justo. Integer euismod libero id mauris malesuada tincidunt. Vivamus commodo nulla ut lorem rhoncus aliquet. Duis dapibus augue vel ipsum pretium, et venenatis sem blandit. Quisque ut erat vitae nisi ultrices placerat non eget velit. Integer ornare mi sed ipsum lacinia, non sagittis mauris blandit. Morbi fermentum libero vel nisl suscipit, nec tincidunt mi consectetur.
+                  {blog?.description}
                 </p>
               </div>
             </div>
