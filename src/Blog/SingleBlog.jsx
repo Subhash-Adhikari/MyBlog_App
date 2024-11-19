@@ -4,12 +4,34 @@ import Layout from '../global_components/layout/layout';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { baseUrl } from '../config';
-import { useState,useEffect } from 'react';
+import { useState,useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SingleBlog = () => {
 
   const {id} = useParams()
   const[blog,setBlog] = useState({})
+  const navigate = useNavigate()
+
+const deleteBlog= async()=>{
+ try { const response = await axios.delete(`${baseUrl}/blog/${id}`,{
+    headers : {
+      'Authorization' : localStorage.getItem('token')
+    }
+  });
+    if (response.status === 200){
+      navigate('/')
+    }
+    else {
+      alert("Something went wrong :(")
+    }
+
+}
+catch (error) {
+  alert(error.response.data.message)
+}
+}
+
   const fetchBlog = async ()=>{
     const response = await axios.get(`${baseUrl}/blog/${id}`);
     if (response.status === 200){
@@ -38,7 +60,7 @@ const SingleBlog = () => {
 
                 </div>
                 <div className="w-1/2 px-2">
-                  <button className="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300">Delete</button>
+                  <button className="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300" onClick={deleteBlog}>Delete</button>
                 </div>
               </div>
             </div>

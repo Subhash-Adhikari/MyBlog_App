@@ -16,8 +16,6 @@ const Home = () => {
       }
     }
       
-   
-
   useEffect(() => {
     fetchBlogs();
   }, []);
