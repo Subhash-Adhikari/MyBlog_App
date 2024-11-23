@@ -8,7 +8,6 @@ const LRform = ({ type, onSubmit }) => {
     password: "",
   });
 
-  // Handles input value changes and updates the state
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData({
@@ -17,44 +16,40 @@ const LRform = ({ type, onSubmit }) => {
     });
   };
 
-  // Handles form submission
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault();
     onSubmit(data);
-    // console.log("Form Submitted:", data); // Log form data
-    // Add API integration logic here
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+    <div className="min-h-screen bg-gray-50 py-6 flex flex-col justify-center sm:py-12">
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
-        <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
-          <div className="max-w-md mx-auto">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1e3a8a] to-[#2563eb] shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+        <div className="relative px-8 py-12 bg-white shadow-xl sm:rounded-3xl sm:p-20">
+          <div className="max-w-xl mx-auto">
             <div>
-              <h1 className="text-2xl font-semibold">
+              <h1 className="text-3xl font-semibold text-gray-800">
                 {type === "Login"
-                  ? "Login here to continue..."
-                  : "Register to connect..."}
+                  ? "Login to your account"
+                  : "Create a new account"}
               </h1>
             </div>
             <form onSubmit={handleSubmit}>
-              <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+              <div className="py-6 space-y-6 text-gray-700">
                 {/* Email Input */}
                 <div className="relative">
                   <input
                     autoComplete="off"
                     id="email"
                     name="email"
-                    type="text"
-                    className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
+                    type="email"
+                    className="peer placeholder-transparent h-12 w-full border-b-2 border-gray-400 text-gray-900 focus:outline-none focus:border-[#1e3a8a]"
                     placeholder="Email address"
                     onChange={handleChange}
-                    // Ensures this field is validated
                   />
                   <label
                     htmlFor="email"
-                    className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
+                    className="absolute left-0 -top-4 text-gray-500 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 transition-all peer-focus:-top-4 peer-focus:text-[#1e3a8a] peer-focus:text-sm"
                   >
                     Email Address
                   </label>
@@ -68,14 +63,14 @@ const LRform = ({ type, onSubmit }) => {
                       id="username"
                       name="username"
                       type="text"
-                      className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
+                      className="peer placeholder-transparent h-12 w-full border-b-2 border-gray-400 text-gray-900 focus:outline-none focus:border-[#1e3a8a]"
                       placeholder="Username"
                       onChange={handleChange}
                       required
                     />
                     <label
                       htmlFor="username"
-                      className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
+                      className="absolute left-0 -top-4 text-gray-500 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 transition-all peer-focus:-top-4 peer-focus:text-[#1e3a8a] peer-focus:text-sm"
                     >
                       Username
                     </label>
@@ -89,14 +84,14 @@ const LRform = ({ type, onSubmit }) => {
                     id="password"
                     name="password"
                     type="password"
-                    className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
+                    className="peer placeholder-transparent h-12 w-full border-b-2 border-gray-400 text-gray-900 focus:outline-none focus:border-[#1e3a8a]"
                     placeholder="Password"
                     onChange={handleChange}
                     required
                   />
                   <label
                     htmlFor="password"
-                    className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm"
+                    className="absolute left-0 -top-4 text-gray-500 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 transition-all peer-focus:-top-4 peer-focus:text-[#1e3a8a] peer-focus:text-sm"
                   >
                     Password
                   </label>
@@ -105,20 +100,22 @@ const LRform = ({ type, onSubmit }) => {
                 {/* Submit Button */}
                 <div className="relative">
                   <button
-                    type="submit" // Ensures the form is submitted
-                    className="bg-blue-500 text-white rounded-md px-2 py-1"
+                    type="submit"
+                    className="w-full bg-[#1e3a8a] text-white font-medium rounded-md py-3 hover:bg-[#2563eb] transition-all"
                   >
-                    Submit
+                    {type === "Login" ? "Login" : "Register"}
                   </button>
                 </div>
               </div>
+
+              {/* Navigation Links */}
               {type === "Register" ? (
-                <Link to="/login" style={{ color: "blue" }}>
-                  Go to login
+                <Link to="/login" className="block text-center text-[#1e3a8a] hover:text-[#2563eb] mt-4">
+                  Already have an account? Login
                 </Link>
               ) : (
-                <Link to="/register" style={{ color: "blue" }}>
-                  Go to register
+                <Link to="/register" className="block text-center text-[#1e3a8a] hover:text-[#2563eb] mt-4">
+                  Don't have an account? Register
                 </Link>
               )}
             </form>
