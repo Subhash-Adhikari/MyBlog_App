@@ -13,7 +13,7 @@ const Navbar = () => {
           >
             {/* Logo image */}
             <img
-              src="https://flowbite.com/docs/images/logo.svg"
+              src="/png-transparent-social-media-icons-blog-blogger-symbol-wordpress-blue-text-technology.png"
               className="h-8"
               alt="Logo"
             />
