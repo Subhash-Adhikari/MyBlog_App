@@ -13,8 +13,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Register />} />
+        <Route path="/homexyz" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/blog/add" element={<AddBlog />} />
         <Route path="/blog/edit/:id" element={<EditBlog />} />

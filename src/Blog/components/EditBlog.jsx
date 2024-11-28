@@ -19,7 +19,7 @@ const EditBlog = () => {
         },
       });
       if (response.status === 200) {
-        navigate("/");
+        navigate("/homexyz");
       } else {
         setError("Something went wrong");
       }

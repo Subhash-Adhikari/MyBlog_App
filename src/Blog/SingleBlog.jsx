@@ -11,7 +11,9 @@ const SingleBlog = () => {
   const navigate = useNavigate();
 
   const deleteBlog = async () => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this blog?");
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this blog?"
+    );
     if (!confirmDelete) return;
 
     try {
@@ -21,7 +23,7 @@ const SingleBlog = () => {
         },
       });
       if (response.status === 200) {
-        navigate("/");
+        navigate("/homexyz");
       } else {
         alert("Something went wrong :(");
       }
@@ -64,8 +66,12 @@ const SingleBlog = () => {
     return (
       <Layout>
         <div className="flex justify-center items-center h-screen text-center">
-          <p className="text-gray-600">Blog not found. It might have been deleted.</p>
-          <Link to="/" className="text-blue-500 mt-4 hover:underline">Go back to home</Link>
+          <p className="text-gray-600">
+            Blog not found. It might have been deleted.
+          </p>
+          <Link to="/" className="text-blue-500 mt-4 hover:underline">
+            Go back to home
+          </Link>
         </div>
       </Layout>
     );
@@ -77,10 +83,15 @@ const SingleBlog = () => {
         <div className="max-w-5xl mx-auto p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
           {/* Blog Header */}
           <div className="mb-6">
-            <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-2">{blog.title}</h1>
+            <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-2">
+              {blog.title}
+            </h1>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              Posted by <span className="font-semibold">{blog?.userId?.username}</span> in{" "}
-              <span className="font-semibold text-blue-500">{blog.category}</span>
+              Posted by{" "}
+              <span className="font-semibold">{blog?.userId?.username}</span> in{" "}
+              <span className="font-semibold text-blue-500">
+                {blog.category}
+              </span>
             </p>
           </div>
 
@@ -95,8 +106,12 @@ const SingleBlog = () => {
 
           {/* Blog Description */}
           <div className="mb-6">
-            <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Blog Description:</h2>
-            <p className="text-gray-600 dark:text-gray-300">{blog.description}</p>
+            <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">
+              Blog Description:
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300">
+              {blog.description}
+            </p>
           </div>
 
           {/* Action Buttons */}

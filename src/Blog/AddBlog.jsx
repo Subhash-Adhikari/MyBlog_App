@@ -16,7 +16,7 @@ const AddBlog = () => {
         },
       });
       if (response.status === 201) {
-        navigate("/");
+        navigate("/homexyz");
       } else {
         alert("Something went wrong");
       }
