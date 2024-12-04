@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import Layout from "../global_components/layout/layout";
+import Layout from "../../global_components/layout/Layout"; 
 import { baseUrl } from "../config";
 
 const SingleBlog = () => {
