@@ -8,6 +8,7 @@ import Layout from "./global_components/layout/layout";
 import Navbar from "./global_components/navbar/Navbar";
 import EditBlog from "./Blog/components/EditBlog";
 import SingleBlog from "./Blog/SingleBlog";
+import Layout from "./global_components/layout/layout";
 
 function App() {
   return (
