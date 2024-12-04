@@ -4,7 +4,7 @@ import Home from "./Blog/Home";
 import Register from "./Auth/Register";
 import Login from "./Auth/Login";
 import AddBlog from "./Blog/AddBlog";
-import Layout from "./global_components/layout/layout";
+import Layout from "./global_components/layout/Layout"; // Corrected import
 import Navbar from "./global_components/navbar/Navbar";
 import EditBlog from "./Blog/components/EditBlog";
 import SingleBlog from "./Blog/SingleBlog";
