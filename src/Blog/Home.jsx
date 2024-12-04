@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../global_components/navbar/Navbar';
-import Layout from '../global_components/layout/layout';
 import Card from './components/Card/Card';
 import { baseUrl } from '../config';
 import axios from 'axios';
+import Layout from "../global_components/layout/Layout";
+
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
