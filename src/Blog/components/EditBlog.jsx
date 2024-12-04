@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Layout from "../../global_components/layout/layout";
+import Layout from "../../global_components/layout/Layout"; // Corrected path
 import Form from "./form/Form";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
